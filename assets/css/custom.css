@@ -379,3 +379,107 @@ input.valid {
     font-size: 16px;
     z-index: 1000;
 }
+
+.php-email-form input,
+.php-email-form output {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.php-email-form input.valid {
+    border-color: #28a745;
+    box-shadow: 0 0 4px rgba(40, 167, 69, 0.5);
+}
+
+.php-email-form input.invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 4px rgba(220, 53, 69, 0.5);
+}
+
+.php-email-form .error {
+    margin-top: 3px;
+    color: #dc3545;
+    font-size: 0.85em;
+    display: none;
+}
+
+.php-email-form button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #0066ff;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.php-email-form button[type="submit"]:disabled {
+    background: #9bbdff;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#successMessage {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    font-size: 16px;
+    z-index: 9999;
+}
+
+.game-board {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    perspective: 1000px;
+}
+
+.card span {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.card-front {
+    background-color: #f0c000;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-color: #1e90ff;
+    transform: rotateY(0deg);
+}
+
+.card.flipped .card-front {
+    transform: rotateY(0deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(180deg);
+}
